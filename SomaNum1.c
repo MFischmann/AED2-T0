@@ -1,7 +1,9 @@
 #include <stdio.h>
+#include <time.h>
 
 void main(int argc, char const *argv[])
 {   
+    clock_t t = clock();
     int max_i = 0;
     int max_count = 0;
     int c;
@@ -18,6 +20,10 @@ void main(int argc, char const *argv[])
         }
     }
     printf("Maximo count encontrado: %d em %d.\n", max_count, max_i);
+    t = clock() - t;
+    double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds 
+  
+    printf("%f segundos\n", time_taken);
 }
 
 int contaSomatorios(int n){
