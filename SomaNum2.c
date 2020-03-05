@@ -35,23 +35,23 @@ int main()
 
 int contaSomatorios(int n){
     int count = 1; //Proprio numero ja conta
-    int target = n/2 + n%2;
-    int min = target;
+    int upper = n/2 + n%2;
+    int min = upper;
     int sum = 0;
     while (min > 1){
-        if(sum < n){
+        if(sum < n){ // Se menor que o numero, adiciona proximo valor sequencial.
             sum+=min;
             min--;
         }
-        if(sum > n){
-            sum += min - target;
-            target--;
+        if(sum > n){//Se maior que o numero, decrementa maior valor sequencial e adiciona proximo valor sequencial.
+            sum += min - upper;
+            upper--;
             min--;
         }
-        if(sum == n){
+        if(sum == n){ //Se igual, incrementa count e decrementa maior valor sequencial.
             count++;
-            sum -=target;
-            target--;
+            sum -=upper;
+            upper--;
         }
     }
     return count;
