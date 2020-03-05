@@ -33,7 +33,7 @@ int contaSomatorios(int n){
     int sum = 0;
     while (min > 1){
         min = target;
-        while (sum < n)
+        while (sum < n && min > 1)
         {
             sum += min;
             min--;
