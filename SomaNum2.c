@@ -38,7 +38,7 @@ int contaSomatorios(int n){
     int upper = n/2 + n%2;
     int min = upper;
     int sum = 0;
-    while (min > 1){
+    while (min > 0){
         if(sum < n){ // Se menor que o numero, adiciona proximo valor sequencial.
             sum+=min;
             min--;
